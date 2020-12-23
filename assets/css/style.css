@@ -362,9 +362,34 @@ html {
   letter-spacing: 0.1em;
 }
 
+h1 {
+  font-family: "Roboto Slab", serif;
+  font-weight: 300;
+  font-size: 3.75rem;
+  letter-spacing: 0.08em;
+  line-height: 1.2;
+}
+
 a {
   text-decoration: none;
   color: #ffffff;
+}
+
+.btn {
+  border: 2px solid #ffffff;
+  min-width: 250px;
+  height: 60px;
+  display: block;
+  text-align: center;
+  font-size: 1.125rem;
+  padding: 18px 20px;
+  background-color: rgba(255, 255, 255, 0.1);
+  letter-spacing: 0.1em;
+  transition: background-color 0.5s;
+}
+
+.btn:hover {
+  background-color: #d66926;
 }
 
 .header {
@@ -452,12 +477,26 @@ a {
   font-size: 1.125rem;
   padding: 20px;
   display: block;
+  transition: color 0.5s;
 }
 
+.header-navbar__link:hover {
+  color: #d66926;
+}
 .header-content {
   position: relative;
 }
 
 .header-content__title {
-  margin: 0;
+  margin: 0 0 53px;
+  text-align: center;
+}
+
+.header-content__buttons {
+  display: flex;
+  justify-content: center;
+}
+
+.header-content__buttons .btn:first-of-type {
+  margin-right: 20px;
 }
