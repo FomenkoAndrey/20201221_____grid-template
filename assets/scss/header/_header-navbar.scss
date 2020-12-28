@@ -1,0 +1,30 @@
+
+.header-navbar {
+  display: grid;
+  justify-items: end;
+}
+
+.header-navbar__btn {
+  display: none;
+}
+
+.header-navbar__list {
+  width: 100%;
+  margin: 0 -20px 0 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  justify-content: end;
+  grid-template-columns: repeat(auto-fit, minmax(50px, max-content));
+}
+
+.header-navbar__link {
+  font-size: 1.125rem;
+  padding: 20px;
+  display: block;
+  transition: color 0.5s;
+}
+
+.header-navbar__link:hover {
+  color: #d66926;
+}

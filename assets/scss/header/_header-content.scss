@@ -1,0 +1,18 @@
+
+.header-content {
+  position: relative;
+}
+
+.header-content__title {
+  margin: 0 0 53px;
+  text-align: center;
+}
+
+.header-content__buttons {
+  display: flex;
+  justify-content: center;
+}
+
+.header-content__buttons .btn:first-of-type {
+  margin-right: 20px;
+}
