@@ -4,49 +4,88 @@
 }
 
 html {
-  font-size: 16px;
-  font-family: "Roboto", sans-serif;
+  font-size: $font-size;
+  font-family: $font-main;
   overflow-y: scroll;
   letter-spacing: 0.1em;
 }
 
+@mixin min-lg {
+  @media (min-width: $lg) {
+    @content;
+  }
+}
+
+@mixin lg-md {
+  @media (max-width: $lg - 0.2) and (min-width: $md) {
+    @content;
+  }
+}
+
+@mixin md {
+  @media (max-width: $md - 0.2) {
+    @content;
+  }
+}
+
 h1 {
-  font-family: "Roboto Slab", serif;
+  font-family: $font-header;
   font-weight: 300;
-  font-size: 3.75rem;
   letter-spacing: 0.08em;
   line-height: 1.2;
+
+  @include lg-min {
+    font-size: 3.75rem;
+  }
+  @include lg-md {
+    font-size: 2.5rem;
+  }
+  @include md {
+    font-size: 1.875rem;
+  }
 }
 
 a {
   text-decoration: none;
-  color: #ffffff;
-}
-
-.btn,
-.btn-accent {
-  display: block;
-  height: 60px;
-  padding: 18px 20px;
-  transition: background-color 0.5s;
-  text-align: center;
-  font-size: 1.125rem;
-  letter-spacing: 0.1em;
+  color: $color-light;
 }
 
 .btn {
-  border: 2px solid #ffffff;
-  min-width: 250px;
-  background-color: rgba(255, 255, 255, 0.1);
+  border: 2px solid $color-light;
+  background-color: rgba($color-light, 0.1);
+  @extend %btn-common;
+  @include lg-min {
+    height: 60px;
+    padding: 18px $gap;
+    font-size: 1.125rem;
+    min-width: 250px;
+  }
+  @include lg-md {
+    height: 50px;
+    padding: 14px $gap;
+    font-size: 1rem;
+    min-width: 200px;
+  }
+  @include md {
+    height: 40px;
+    padding: 9px $gap;
+    min-width: 170px;
+  }
 }
 
 .btn-accent {
-  border: 2px solid #2d3651;
-  min-width: 350px;
-  background-color: rgba(45, 54, 81, 0.8);
+  @extend %btn-common;
+  padding: 18px $gap;
+  height: 60px;
+  border: 2px solid $color-primary;
+  background-color: rgba($color-primary, 0.8);
+  font-size: 1.125rem;
+
+  @include sm-min {
+    min-width: 350px;
+  }
+  @include sm {
+    width: 100%;
+  }
 }
 
-.btn:hover,
-.btn-accent:hover {
-  background-color: #d66926;
-}
